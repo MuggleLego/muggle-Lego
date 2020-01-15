@@ -1,4 +1,4 @@
-ackage main
+package main
 
 import "fmt"
 
@@ -7,7 +7,7 @@ func main(){
         test2()
 }
 
-//one loop
+//one loop and string concatenation
 func test1(){
         var str string
         var tmp string
