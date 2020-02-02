@@ -1,5 +1,1 @@
-**HELLO FUCKING WORLD!!**
-
-**HELLO MUGGLE!!**
-
-**HELLO SALTY FISH!!**
+**Fucking Barbarous Code**
