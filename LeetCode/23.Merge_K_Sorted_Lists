@@ -1,0 +1,54 @@
+
+func mergeKLists(lists []*ListNode) *ListNode {
+    count := len(lists)
+    if count == 0 {
+        return nil
+    }
+    for count != 1 {
+        i := count >> 1
+        for j:=0;j<i;j++ {
+            tmp := merge(lists[j],lists[count-1-j])
+            lists[j] = tmp
+        }
+        if count&1 ==1 {
+            count = (count+1)>>1
+        }else {
+            count >>= 1
+        }
+    }
+    return lists[0]
+}
+
+func merge(l1 *ListNode, l2 *ListNode) *ListNode {
+    if l1 == nil {
+        return l2
+    }
+    if l2 == nil {
+        return l1
+    }
+    var ret *ListNode
+    if l1.Val < l2.Val {
+        ret = l1
+        l1 = l1.Next
+    }else {
+        ret = l2
+        l2 = l2.Next
+    }
+    tmp := ret
+    for l1 != nil && l2 != nil {
+        if l1.Val < l2.Val {
+            tmp.Next = l1
+            l1 = l1.Next
+        }else {
+            tmp.Next = l2
+            l2 = l2.Next
+        }
+        tmp = tmp.Next
+    }
+    if l1 == nil {
+        tmp.Next = l2
+    }else {
+        tmp.Next = l1
+    }
+    return ret
+}
