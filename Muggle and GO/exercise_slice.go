@@ -1,3 +1,4 @@
+//date:2020.10.21
 package main
 
 import "golang.org/x/tour/pic"
